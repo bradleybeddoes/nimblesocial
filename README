@@ -1,1 +1,14 @@
 Complimentary components for Nimble in the social media space.
+
+You will need to manually change your Profile class to inherit from the SocialProfileBase.
+
+For Example:
+class Profile extends grails.plugins.nimble.core.ProfileBase {
+    ...
+}
+
+changes to:
+
+class Profile extends grails.plugins.nimble.social.SocialProfileBase {
+    ...
+}
