@@ -1,14 +1,10 @@
-
-<%@ page import="intient.nimble.domain.Gender" %>
-
 <html>
 
   <head>
     <meta name="layout" content="${grailsApplication.config.nimble.layout.application}"/>
     <title>Profile | Edit Social Services</title>
 
-  <n:growl/>
-  <n:flashgrowl/>
+    <nh:growl/>
 
   <link rel="stylesheet" href="${resource(dir: pluginContextPath, file: '/css/profile.css')}"/>
 
@@ -18,10 +14,10 @@
   <div class="container">
     <div class="profile">
 
-      <g:render template="/templates/nimble/profile/left" model="[user:user, profile:user.profile]" />
+      <g:render template="/templates/nimblesocial/profile/left" model="[user:user, profile:user.profile]" />
 
       <div class="main edit">
-        <g:render template="/templates/nimble/profile/banner" model="[user:user, profile:user.profile]" />
+        <g:render template="/templates/nimblesocial/profile/banner" model="[user:user, profile:user.profile]" />
 
         <div class="section">
           <h3>Social Services</h3>
@@ -35,8 +31,8 @@
             </g:else>
 
             <g:each in="${user.profile.socialAccounts}" var="account" status="i">
-              <g:render template="/templates/nimble/profile/socialmedia" model="[account:account, remove:true]"/>
-              <g:render template="/templates/profile/social/edit/${account.service.details.name.toLowerCase()}" model="[account:account]"/>
+              <g:render template="/templates/nimblesocial/profile/socialmedia" model="[account:account, remove:true]"/>
+              <g:render template="/templates/nimblesocial/social/edit/${account.service.details.name.toLowerCase()}" model="[account:account]"/>
             </g:each>
           </div>
 

@@ -15,8 +15,8 @@
  *  limitations under the License.
  */
 
-import intient.nimble.core.*
-import intient.nimble.social.*
+import grails.plugins.nimble.core.*
+import grails.plugins.nimble.social.*
 
 /**
  * Provides generic, mostly UI related tags to the Nimble application
@@ -24,8 +24,9 @@ import intient.nimble.social.*
  * @author Bradley Beddoes
  */
 class NimbleSocialTagLib {
-
-    static namespace = "n"
+    def pluginContextPath
+  
+    static namespace = "ns"
 
     /**
      * Provides markup to render the supplied users profile photo
@@ -39,7 +40,7 @@ class NimbleSocialTagLib {
         def user = UserBase.get(id)
 
         if(user) {
-            out << render(template: "/templates/profile/photo", contextPath: pluginContextPath, model: [profile: user.profile, size:size])
+            out << render(template: "/templates/nimblesocial/profile/photo", contextPath: pluginContextPath, model: [profile: user.profile, size:size])
             return
         }
         throwTagError("No user located for supplied ID")
@@ -50,7 +51,7 @@ class NimbleSocialTagLib {
      * mini user profile popups on mouse hover.
      */
     def userhighlight = {
-        out << render(template: "/templates/profile/userhighlight", contextPath: pluginContextPath)
+        out << render(template: "/templates/nimblesocial/profile/userhighlight", contextPath: pluginContextPath)
     }
 
     /**
@@ -65,7 +66,7 @@ class NimbleSocialTagLib {
         def user = UserBase.get(id)
 
         if(user) {
-            out << render(template: "/templates/nimble/profile/currentstatus", model: [profile: user.profile, clear:clear])
+            out << render(template: "/templates/nimblesocial/profile/currentstatus", model: [profile: user.profile, clear:clear])
             return
         }
         throwTagError("No user located for supplied ID")

@@ -1,12 +1,9 @@
-
-
 <html>
   <head>
     <meta name="layout" content="${grailsApplication.config.nimble.layout.application}"/>
     <title>Profile | ${profile.fullName}</title>
 
-  <n:growl/>
-  <n:flashgrowl/>
+    <nh:growl/>
 
   <link rel="stylesheet" href="${resource(dir: pluginContextPath, file: '/css/profile.css')}"/>
 </head>
@@ -16,12 +13,12 @@
   <div class="container">
     <div class="profile">
 
-      <g:render template="/templates/nimble/profile/left" model="[user:user, profile:profile]" />
+      <g:render template="/templates/nimblesocial/profile/left" model="[user:user, profile:profile]" />
 
       <div class="main">
-        <g:render template="/templates/nimble/profile/banner" model="[user:user, profile:profile, clear:true]" />
+        <g:render template="/templates/nimblesocial/profile/banner" model="[user:user, profile:profile, clear:true]" />
 
-        <g:render template="/templates/profile/status_create" contextPath="${pluginContextPath}" model="[user:user, profile:profile]" />
+        <g:render template="/templates/nimblesocial/profile/edit/status_create" contextPath="${pluginContextPath}" model="[user:user, profile:profile]" />
 
         <div class="common">
           <h3>Account Details</h3>
@@ -119,7 +116,7 @@ ${address.markup()}
           <h3>Social Networks</h3>
           <div class="socialnetworks">
             <g:each in="${profile.socialAccounts}" var="social" status="i">
-              <g:render template="/templates/nimble/profile/socialmedia" model="[account:social, remove:false]"/>
+              <g:render template="/templates/nimblesocial/profile/socialmedia" model="[account:social, remove:false]"/>
             </g:each>
           </div>
 

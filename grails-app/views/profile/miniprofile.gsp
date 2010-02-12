@@ -5,7 +5,7 @@
 
   <body>
 
-  <g:render template="/templates/nimble/profile/miniprofile" model="[user:user]"/>
+  <g:render template="/templates/nimblesocial/profile/miniprofile" model="[user:user]"/>
 
   </body>
 </html>
