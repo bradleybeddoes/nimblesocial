@@ -24,7 +24,7 @@ function updateStatus() {
 
 <n:hasPermission target="${CorePermissions.editPermission}:$profile.owner.id">
   <div id="createstatus">
-    <h3>What are you upto?</h3>
+    <h3>What are you up to?</h3>
     <form id="statusentry" onsubmit="updateStatus(); return false;">
       <g:hiddenField name="id" value="${user.id}"/>
       <input type="text" size="48" id="newstatus" name="newstatus" class="easyinput"/>
