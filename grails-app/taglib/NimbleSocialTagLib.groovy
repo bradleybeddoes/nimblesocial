@@ -38,8 +38,8 @@ class NimbleSocialTagLib {
 	 * @param size The size in pixels to display.  Applies to both width and height.  (A square image)
      */
     def photo = {attrs ->
-        if(attrs.id == null || attrs.size == null)
-        throwTagError("Photo tag requires user id and size attributes")
+        if((attrs.userId == null && attrs.user == null) || attrs.size == null)
+            throwTagError("Photo tag requires user id and size attributes")
 
         def id = attrs.id
 		def userId = attrs.userId
@@ -76,8 +76,8 @@ class NimbleSocialTagLib {
      * @param clear True/false, allow the user to clear their status
      */
     def status = {attrs ->
-        if(attrs.id == null)
-        throwTagError("Status tag requires user id")
+        if((attrs.userId == null && attrs.user == null))
+            throwTagError("Status tag requires user id")
 
         def id = attrs.id
         def userId = attrs.userId

@@ -1,4 +1,20 @@
 
+.DS_Store
+.sass-cache
+classes
+stacktrace.log
+docs.tar.gz
+
+*~
 *.iml
 *.ipr
 *.iws
+web-app/plugins/*
+target/
+test/reports/*
+unzipped/*
+docs/*
+*.zip
+plugin.xml
+
+src/docs

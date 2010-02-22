@@ -1,0 +1,34 @@
+<plugin name='nimblesocial' version='0.1' grailsVersion='1.2-M3 &gt; *'>
+  <author>Your name</author>
+  <title>Plugin summary/headline</title>
+  <description>\
+Brief description of the plugin.
+</description>
+  <documentation>http://grails.org/plugin/nimblesocial</documentation>
+  <resources>
+    <resource>BuildConfig</resource>
+    <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
+    <resource>grails.plugins.nimble.social.ProfileController</resource>
+    <resource>grails.plugins.nimble.social.Address</resource>
+    <resource>grails.plugins.nimble.social.Feed</resource>
+    <resource>grails.plugins.nimble.social.Language</resource>
+    <resource>grails.plugins.nimble.social.Phone</resource>
+    <resource>grails.plugins.nimble.social.SocialDetails</resource>
+    <resource>grails.plugins.nimble.social.SocialMediaAccount</resource>
+    <resource>grails.plugins.nimble.social.SocialMediaService</resource>
+    <resource>grails.plugins.nimble.social.SocialProfileBase</resource>
+    <resource>grails.plugins.nimble.social.SocialUrl</resource>
+    <resource>grails.plugins.nimble.social.Status</resource>
+    <resource>grails.plugins.nimble.social.FacebookSocialMediaService</resource>
+    <resource>grails.plugins.nimble.social.ProfileService</resource>
+    <resource>grails.plugins.nimble.social.TwitterSocialMediaService</resource>
+    <resource>NimbleSocialTagLib</resource>
+  </resources>
+  <dependencies>
+    <resolvers>
+      <resolver type='grailsPlugins' name='grailsPlugins' />
+    </resolvers>
+  </dependencies>
+  <behavior />
+</plugin>
