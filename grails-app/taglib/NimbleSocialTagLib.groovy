@@ -32,7 +32,8 @@ class NimbleSocialTagLib {
      * Provides markup to render the supplied users profile photo
 	 * (Realizing these docs don't show up, yet)
 	 *
-	 * @param id The ID of the user to display (optional)
+	 * @param id The ID IMG tag (optional)
+     * @param userId The ID of the user profile to load (optional)
 	 * @param user The user to display (optional)
 	 * @param size The size in pixels to display.  Applies to both width and height.  (A square image)
      */
@@ -42,14 +43,14 @@ class NimbleSocialTagLib {
 
         def id = attrs.id
 		def userId = attrs.userId
-		def user = attrs.user
+        def user = attrs.user
         def size = attrs.size
 
-		if(user == null)
-        	user = UserBase.get(userId)
+        if(user == null)
+            user = UserBase.get(userId)
 
-		if(id == null)
-			id = "nimble-photo-${user.id}"
+        if(id == null)
+            id = "nimble-photo-${user.id}"
 
         if(user) {
             out << render(template: "/templates/nimblesocial/profile/photo", contextPath: pluginContextPath, model: [profile: user.profile, id: id, size: size])
@@ -68,24 +69,29 @@ class NimbleSocialTagLib {
 
     /**
      * Providers markup to render the supplied users current status
+     *
+     * @param id The ID IMG tag (optional)
+     * @param userId The ID of the user profile to load (optional)
+	 * @param user The user to display (optional)
+     * @param clear True/false, allow the user to clear their status
      */
     def status = {attrs ->
         if(attrs.id == null)
         throwTagError("Status tag requires user id")
 
         def id = attrs.id
-		def userId = attrs.userId
-		def user = attrs.user
-        def clear = attrs.clear ?:false
+        def userId = attrs.userId
+        def user = attrs.user
+        def clear = attrs.clear ?: false
 
-		if(user == null)
-        	user = UserBase.get(userId)
+        if(user == null)
+            user = UserBase.get(userId)
 
-		if(id == null)
-			id = "nimble-status-${user.id}"
+        if(id == null)
+            id = "nimble-status-${user.id}"
 
         if(user) {
-            out << render(template: "/templates/nimblesocial/profile/currentstatus", model: [profile: user.profile, clear:clear, id: id])
+            out << render(template: "/templates/nimblesocial/profile/currentstatus", model: [profile: user.profile, clear: clear, id: id])
             return
         }
         throwTagError("No user located for supplied ID")
