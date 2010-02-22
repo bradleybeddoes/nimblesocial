@@ -30,17 +30,29 @@ class NimbleSocialTagLib {
 
     /**
      * Provides markup to render the supplied users profile photo
+	 * (Realizing these docs don't show up, yet)
+	 *
+	 * @param id The ID of the user to display (optional)
+	 * @param user The user to display (optional)
+	 * @param size The size in pixels to display.  Applies to both width and height.  (A square image)
      */
     def photo = {attrs ->
         if(attrs.id == null || attrs.size == null)
         throwTagError("Photo tag requires user id and size attributes")
 
         def id = attrs.id
+		def userId = attrs.userId
+		def user = attrs.user
         def size = attrs.size
-        def user = UserBase.get(id)
+
+		if(user == null)
+        	user = UserBase.get(userId)
+
+		if(id == null)
+			id = "nimble-photo-${user.id}"
 
         if(user) {
-            out << render(template: "/templates/nimblesocial/profile/photo", contextPath: pluginContextPath, model: [profile: user.profile, size:size])
+            out << render(template: "/templates/nimblesocial/profile/photo", contextPath: pluginContextPath, model: [profile: user.profile, id: id, size: size])
             return
         }
         throwTagError("No user located for supplied ID")
@@ -62,11 +74,18 @@ class NimbleSocialTagLib {
         throwTagError("Status tag requires user id")
 
         def id = attrs.id
+		def userId = attrs.userId
+		def user = attrs.user
         def clear = attrs.clear ?:false
-        def user = UserBase.get(id)
+
+		if(user == null)
+        	user = UserBase.get(userId)
+
+		if(id == null)
+			id = "nimble-status-${user.id}"
 
         if(user) {
-            out << render(template: "/templates/nimblesocial/profile/currentstatus", model: [profile: user.profile, clear:clear])
+            out << render(template: "/templates/nimblesocial/profile/currentstatus", model: [profile: user.profile, clear:clear, id: id])
             return
         }
         throwTagError("No user located for supplied ID")

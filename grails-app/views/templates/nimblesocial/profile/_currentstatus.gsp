@@ -17,6 +17,7 @@
 </script>
 
 <g:if test="${profile.currentStatus != null}">
+<div id="${id}" class="nimble-status">
   ${profile.currentStatus.status}
   <span class="statuscreated"><g:formatDate format="E dd/MM/yyyy" date="${profile.currentStatus.dateCreated}"/></span>
 
@@ -25,5 +26,5 @@
       <span class="clearstatus"><a onclick="clearStatus();" class="icon icon_delete">clear</a></span>
     </n:hasPermission>
   </g:if>
-
+</div>
 </g:if>
