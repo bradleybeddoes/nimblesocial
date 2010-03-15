@@ -46,6 +46,11 @@ class NimbleSocialTagLib {
         def user = attrs.user
         def size = attrs.size
 
+		if(user == null)
+        	user = UserBase.get(userId)
+
+		if(id == null)
+			id = "nimble-photo-${user.id}"
         if(user == null)
             user = UserBase.get(userId)
 
