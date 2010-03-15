@@ -4,13 +4,13 @@
 
   <n:hasPermission target="${CorePermissions.editPermission}:$profile.owner.id">
     <div id="profilephoto" class="photo">
-      <g:link action="editphoto" id="${user.id}" class=""><ns:photo id="${user.id}" size="180"/></g:link>
+      <g:link action="editphoto" id="${user.id}" class=""><ns:photo user="${user}" size="180"/></g:link>
     </div>
   </n:hasPermission>
 
   <n:lacksPermission target="${CorePermissions.editPermission}:$profile.owner.id">
     <div id="profilephoto" class="photo">
-      <ns:photo id="${user.id}" size="180"/>
+      <ns:photo user="${user}" size="180"/>
     </div>
   </n:lacksPermission>
 

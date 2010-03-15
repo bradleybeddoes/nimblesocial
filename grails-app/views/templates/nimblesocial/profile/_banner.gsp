@@ -9,7 +9,7 @@
     </g:else>
   </g:link>
   <span id="activestatus">
-    &nbsp;<ns:status id="${user.id}" clear="${clear}"/>
+    &nbsp;<ns:status user="${user}" clear="${clear}"/>
   </span>
 </p>
 </div>

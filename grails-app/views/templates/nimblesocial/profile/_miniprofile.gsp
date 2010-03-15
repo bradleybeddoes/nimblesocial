@@ -5,7 +5,7 @@
           <tbody>
             <tr>
               <td>
-          <ns:photo id="${user.id}" size="50"/>
+          <ns:photo user="${user}" size="50"/>
           </td>
           <td>
           <g:render template="/templates/nimblesocial/profile/banner" model="[user:user, profile:profile, clear:false]" />
