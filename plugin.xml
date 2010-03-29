@@ -8,6 +8,7 @@ Brief description of the plugin.
   <resources>
     <resource>BuildConfig</resource>
     <resource>DataSource</resource>
+    <resource>DefaultNimbleSocialConfig</resource>
     <resource>UrlMappings</resource>
     <resource>grails.plugins.nimble.social.ProfileController</resource>
     <resource>grails.plugins.nimble.social.Address</resource>

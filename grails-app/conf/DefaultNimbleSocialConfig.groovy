@@ -14,30 +14,12 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package grails.plugins.nimble.social
 
-import org.codehaus.groovy.grails.commons.ConfigurationHolder
-
-/**
- * Represents an external media service
- *
- * @author Bradley Beddoes
- */
-class SocialMediaService {
-
-  String uid
-  SocialDetails details
-
-  SocialUrl baseProfileUrl
-
-  static mapping = {
-      table ConfigurationHolder.config.nimble.social.tablenames.socialmediaservice
-      uid column: ConfigurationHolder.config.nimble.fieldnames.uid
-  }
-
-  static constraints = {
-    uid(nullable:false, blank:false)
-    details(nullable: false)
-    baseProfileUrl(nullable:true)
-  }
+nimble {
+	social {
+		tablenames {
+			socialmediaaccount = "social_media_account"
+			socialmediaservice = "social_media_service"
+		}
+	}
 }

@@ -38,7 +38,7 @@ class SocialMediaAccount {
     ]
 
     static mapping = {
-	      table ConfigurationHolder.config.nimble.tablenames.socialmediaaccount
+	      table ConfigurationHolder.config.nimble.social.tablenames.socialmediaaccount
 	}
 
     static constraints = {
