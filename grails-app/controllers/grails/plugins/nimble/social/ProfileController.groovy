@@ -1,5 +1,5 @@
 /*
- *  Nimble, an extensive application base for Grails
+ *  NimbleSocial, A complimentary set of social web functionality for Nimble, an extensive application base for Grails
  *  Copyright (C) 2010 Bradley Beddoes
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
