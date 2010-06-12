@@ -4,7 +4,7 @@ class NimblesocialGrailsPlugin {
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.2-M3 > *"
     // the other plugins this plugin depends on
-    def dependsOn = [nimble:0.4-SNAPSHOT > *]
+    def dependsOn = [nimble:"0.4-SNAPSHOT > *"]
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
             "grails-app/views/error.gsp"
