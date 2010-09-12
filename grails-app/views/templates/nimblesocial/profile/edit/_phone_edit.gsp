@@ -13,10 +13,10 @@
           $("#newnumber").val('')
           $("#newnumbermessageerror").empty();
           $("#currentphonenumbers").empty().append(res).show('highlight')
-          growl("success", "Your new phone number was added");
+          nimble.growl("success", "Your new phone number was added");
         },
         error: function (xhr, ajaxOptions, thrownError) {
-          growl("error", "There was an error adding your phone number");
+          nimble.growl("error", "There was an error adding your phone number");
           $("#newnumbermessageerror").hide().empty().append(xhr.responseText).show('blind');
         }
       });
@@ -32,10 +32,10 @@
         success: function(res) {
           $("#currentphonenumbers").empty().append(res)
           $("#newnumber").val('')
-          growl("success", "Your phone number was deleted");
+          nimble.growl("success", "Your phone number was deleted");
         },
         error: function (xhr, ajaxOptions, thrownError) {
-          growl("error", "There was an error removing your phone number");   
+          nimble.growl("error", "There was an error removing your phone number");
         }
       });
   }

@@ -29,10 +29,10 @@
           $("#profilephoto").hide().empty().append(res).show('blind');
           $("#enablegravatar").hide();
           $("#disablegravatar").show();
-          growl("success", "Your profile photo is now linked to Gravatar");
+          nimble.growl("success", "Your profile photo is now linked to Gravatar");
         },
         error: function (xhr, ajaxOptions, thrownError) {
-          growl("error", "There was an error linking Gravatar to your account");
+          nimble.growl("error", "There was an error linking Gravatar to your account");
         }
       });
     }
@@ -47,10 +47,10 @@
           $("#profilephoto").hide().empty().append(res).show('blind');
           $("#disablegravatar").hide();
           $("#enablegravatar").show();
-          growl("success", "Your profile photo is no longer linked to Gravatar");
+          nimble.growl("success", "Your profile photo is no longer linked to Gravatar");
         },
         error: function (xhr, ajaxOptions, thrownError) {
-          growl("error", "There was an error unlinking Gravatar from your account");
+          nimble.growl("error", "There was an error unlinking Gravatar from your account");
         }
       });
     }

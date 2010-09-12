@@ -10,10 +10,10 @@ function updateEmail() {
           $("#updateemail").hide();
           $("#emailmessageerror").hide();
           $("#emailmessage").hide().empty().append(res).show('blind');
-          growl("success", "Your email address was updated");
+          nimble.growl("success", "Your email address was updated");
         },
         error: function (xhr, ajaxOptions, thrownError) {
-          growl("error", "There was an error updating your email address");
+          nimble.growl("error", "There was an error updating your email address");
           $("#emailmessageerror").empty().append(xhr.responseText).show('blind');
         }
       });
