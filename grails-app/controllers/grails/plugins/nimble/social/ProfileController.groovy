@@ -237,12 +237,12 @@ class ProfileController {
                 log.debug it
             }
             
-            render template:"/templates/errors", contextPath: pluginContextPath, model: [bean:processedPhone]
+            render template:"/templates/errors", plugin:"nimble", model: [bean:processedPhone]
             response.setStatus(500)
             return
         }
 
-        render (template: "/templates/nimblesocial/profile/phone_edit_list", contextPath: pluginContextPath, model: [user:user])
+        render (template: "/templates/nimblesocial/profile/edit/phone_edit_list", contextPath: pluginContextPath, model: [user:user])
         return
     }
 
@@ -307,7 +307,7 @@ class ProfileController {
             return
         }
 
-        render template:"/templates/errors", contextPath: pluginContextPath, model: [bean:user.profile]
+        render template:"/templates/errors", plugin:"nimble", model: [bean:user.profile]
         response.setStatus(500)
         return
     }
@@ -370,7 +370,7 @@ class ProfileController {
             response.sendError(500)
             return
         }
-        render (template: "/templates/nimble/profile/currentstatus", model: [profile: user.profile, clear: true])
+        render (template: "/templates/nimblesocial/profile/currentstatus", model: [profile: user.profile, clear: true])
         return
     }
 
