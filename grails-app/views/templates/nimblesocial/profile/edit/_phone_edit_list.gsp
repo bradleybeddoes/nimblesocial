@@ -16,7 +16,7 @@
           ${phone.number}
         </td>
         <td>
-        <a href="_phone_edit_list.gsp#" class="button icon icon_phone_delete" onclick="deletePhone(${user.id}, ${phone.id})">Delete</a>
+        <a href="#" class="button icon icon_phone_delete" onclick="deletePhone(${user.id}, ${phone.id})">Delete</a>
       </td>
       </tr>
     </g:each>
