@@ -7,7 +7,7 @@
       <img id="${id}" class="photo" src="${createLink(controller: 'profile', action: 'displayphoto', id: profile.owner.id)}" width="${size}" height="${size}"/>
     </g:if>
     <g:else>
-      <img id="${id}" src="${resource(dir: pluginContextPath, file: '/images/silhouette.png')}" alt="No profile photo" border="0" width="${size}" height="${size}" /> 
+      <img id="${id}" src="${resource(plugin: 'nimble', file: '/images/silhouette.png')}" alt="No profile photo" border="0" width="${size}" height="${size}" />
     </g:else>
   </g:else>
 
