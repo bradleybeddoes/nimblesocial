@@ -10,7 +10,7 @@
         $("#activestatus").hide().empty();
       },
       error: function (xhr, ajaxOptions, thrownError) {
-        growl("error", "There was an error updating your status");
+        nimble.growl("error", "There was an error updating your status");
       }
     });
   }

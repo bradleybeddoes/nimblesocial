@@ -11,10 +11,10 @@ function updateStatus() {
       success: function(res) {
         $("#activestatus").hide().empty().append(res).show('highlight');
         $("#newstatus").val('')
-        growl("success", "Your status was updated");
+        nimble.growl("success", "Your status was updated");
       },
       error: function (xhr, ajaxOptions, thrownError) {
-        growl("error", "There was an error updating your status");
+        nimble.growl("error", "There was an error updating your status");
       }
     });
   }
